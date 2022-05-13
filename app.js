@@ -1,18 +1,37 @@
-const { leerInput, inquirerMenu, pausa } = require("./helpers/inquirer")
+const { leerInput, inquirerMenu, pausa } = require("./helpers/inquirer");
+const Busquedas = require("./models/busquedas");
 
 
 
 const main = async() => {
 
+    const busquedas = new Busquedas;
     let opt;
+
+    
 
     do {
 
         opt = await inquirerMenu();
 
-        switch(opt) {
+        switch( opt ) {
             case 1:
-                console.log(`${opt}: Buscar ciudad`);
+                const lugar = await leerInput('Ciudad: ');
+
+                console.log(lugar);
+                // Mostrar mensaje
+                // Buscar los lugares
+                //  Seleccionar el lugar
+                // Datos del clima
+                // Mostrar resultados
+
+                console.log(`\nInformación de la ciudad\n`.green);
+                console.log('Ciudad:', );
+                console.log('Lat:', );
+                console.log('Lng:', );
+                console.log('Temperatura:', );
+                console.log('Mínima:', );
+                console.log('Máxima:', );
             break;
             case 2:
                 console.log(`${opt}: Historial`);
